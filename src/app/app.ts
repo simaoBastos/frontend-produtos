@@ -1,14 +1,18 @@
-import { CurrencyPipe } from '@angular/common';
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
+import { Produto } from './produto/produto';
+import { ProdutoDados } from './produto/produto.model';
 
 @Component({
   selector: 'app-root',
-  imports: [CurrencyPipe],
+  imports: [Produto],
   templateUrl: './app.html',
   styleUrl: './app.scss',
 })
 export class App {
-  produto: Produto[] = [
+  comprarProduto(produto: ProdutoDados) {
+    console.log(`${produto.nome} comprado!`);
+  }
+  produto: ProdutoDados[] = [
     {
       nome: 'Mouse',
       preco: 50.0,
@@ -25,10 +29,4 @@ export class App {
       quantidade: 5,
     },
   ];
-}
-
-interface Produto {
-  nome: string;
-  preco: number;
-  quantidade: number;
 }

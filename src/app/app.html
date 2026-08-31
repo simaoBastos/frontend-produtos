@@ -1,21 +1,6 @@
 <h1>Lista de Produtos</h1>
 <div class="produtos">
-  <div class="produto" id="produto01">
-    <p>Nome:</p>
-    <h2>{{ produto[0].nome }}</h2>
-    <p>Preço: {{ produto[0].preco | currency: 'BRL' }}</p>
-    <p>Quantidade: {{ produto[0].quantidade }}</p>
-  </div>
-  <div class="produto" id="produto02">
-    <p>Nome:</p>
-    <h2>{{ produto[1].nome }}</h2>
-    <p>Preço: {{ produto[1].preco | currency: 'BRL' }}</p>
-    <p>Quantidade: {{ produto[1].quantidade }}</p>
-  </div>
-  <div class="produto" id="produto03">
-    <p>Nome:</p>
-    <h2>{{ produto[2].nome }}</h2>
-    <p>Preço: {{ produto[2].preco | currency: 'BRL' }}</p>
-    <p>Quantidade: {{ produto[2].quantidade }}</p>
-  </div>
+  <app-produto [produto]="produto[0]" (comprar)="comprarProduto($event)"></app-produto>
+  <app-produto [produto]="produto[1]" (comprar)="comprarProduto($event)"></app-produto>
+  <app-produto [produto]="produto[2]" (comprar)="comprarProduto($event)"></app-produto>
 </div>
