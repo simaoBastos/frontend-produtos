@@ -9,9 +9,6 @@ import { ProdutoDados } from './produto/produto.model';
   styleUrl: './app.scss',
 })
 export class App {
-  comprarProduto(produto: ProdutoDados) {
-    console.log(`${produto.nome} comprado!`);
-  }
   produto: ProdutoDados[] = [
     {
       nome: 'Mouse',
@@ -29,4 +26,8 @@ export class App {
       quantidade: 5,
     },
   ];
+
+  comprarProduto(produto: ProdutoDados) {
+    console.log(`${produto.nome} comprado!`);
+  }
 }
