@@ -26,7 +26,7 @@ jobs:
         run: npm ci
 
       - name: Gerar build
-        run: npm run build
+        run: npm run build -- --base-href=/frontend-produtos/
 
       - name: Publicar no GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
